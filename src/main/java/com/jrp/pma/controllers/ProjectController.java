@@ -8,8 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.jrp.pma.dao.EmployeeRepository;
 import com.jrp.pma.dao.ProjectRepository;
+import com.jrp.pma.entities.Employee;
 import com.jrp.pma.entities.Project;
 
 @Controller
@@ -18,6 +21,9 @@ public class ProjectController {
 	
 	@Autowired
 	ProjectRepository projectRepo;
+	
+	@Autowired
+	EmployeeRepository employeeRepo;
 
 	@GetMapping
 	public String displayProjects(Model model) {
@@ -28,13 +34,14 @@ public class ProjectController {
 	
 	@GetMapping("/new")
 	public String displayProjectForm(Model model) {
-		
+		List<Employee> employees = employeeRepo.findAll();
 		model.addAttribute("project", new Project());
+		model.addAttribute("employees", employees);
 		return "projects/new-project";
 	}
 	
 	@PostMapping("/save")
-	public String saveProject(Model model, Project project) {
+	public String saveProject(@RequestParam List<Long> employees, Model model, Project project) {
 		
 		projectRepo.save(project);
 		// use redirect to prevent multiple submits

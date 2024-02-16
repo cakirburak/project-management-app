@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jrp.pma.dao.EmployeeRepository;
+import com.jrp.pma.dao.ProjectRepository;
 import com.jrp.pma.entities.Employee;
 
 @Controller
@@ -19,6 +20,9 @@ public class EmployeeController {
 	@Autowired
 	EmployeeRepository employeeRepo;
 
+	@Autowired
+	ProjectRepository projectRepo;
+	
 	@GetMapping
 	public String showEmployees(Model model) {
 		
