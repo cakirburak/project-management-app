@@ -1,5 +1,6 @@
 package com.jrp.pma.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -40,8 +41,6 @@ public class Employee {
 	}
 	
 	
-	
-	
 	public List<Project> getProjects() {
 		return projects;
 	}
@@ -73,5 +72,12 @@ public class Employee {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public void addProject(Project peoject) {
+		if(this.projects == null) {
+			this.projects = new ArrayList<>();
+		}
+		this.projects.add(peoject);
 	}
 }

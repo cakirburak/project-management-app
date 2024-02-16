@@ -1,5 +1,6 @@
 package com.jrp.pma.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -11,7 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
 
 @Entity
 public class Project {
@@ -74,8 +74,11 @@ public class Project {
 		this.description = description;
 	} 
 	
-	
-	
-	
+	public void addEmployee(Employee emp) {
+		if(this.employees == null) {
+			this.employees = new ArrayList<>();
+		}
+		this.employees.add(emp);
+	}
 
 }
