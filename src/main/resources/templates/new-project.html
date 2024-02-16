@@ -9,7 +9,7 @@
 	<body>
 		<div class="container-sm mt-5">
 			<h1 class="text-center">Create Project</h1>
-			<form th:object="${project}" action="/project/save" method="POST" class="d-flex gap-3 flex-column justify-content-center mx-5 mt-5">
+			<form th:object="${project}" action="/projects/save" method="POST" class="d-flex gap-3 flex-column justify-content-center mx-5 mt-5">
 				<input type="text"  th:field="${project.name}"placeholder="Project Name">
 				<select  th:field="${project.stage}">
 					<option th:value="NOTSTARTED">Not Started</option>
