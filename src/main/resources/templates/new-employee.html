@@ -9,7 +9,7 @@
 	<body>
 		<div class="container-sm mt-5">
 			<h1 class="text-center">Create Employee</h1>
-			<form th:object="${employee}" action="/employees/save" method="POST" class="d-flex gap-3 flex-column justify-content-center mx-5 mt-5">
+			<form th:object="${employee}" action="/employees/save" method="POST" class="w-25 d-flex gap-3 flex-column justify-content-center mx-auto mt-5">
 				<input type="text" th:field="${employee.firstName}"placeholder="First Name">
 				<input type="text" th:field="${employee.lastName}"placeholder="Last Name">
 				<input type="text" th:field="${employee.email}"placeholder="Email">

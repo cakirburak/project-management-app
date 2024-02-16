@@ -29,6 +29,6 @@ public class ProjectController {
 		
 		projectRepo.save(project);
 		// use redirect to prevent multiple submits
-		return "redirect:/projects/new";
+		return "redirect:/home";
 	}
 }

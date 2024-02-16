@@ -27,6 +27,6 @@ public class EmployeeController {
 	public String showEmployeeForm(Model model, Employee employee) {
 
 		employeeRepo.save(employee);
-		return "redirect:/employees/new";
+		return "redirect:/home";
 	}
 }
