@@ -16,8 +16,12 @@ import jakarta.persistence.ManyToMany;
 @Entity
 public class Project {
 	
+	//@GeneratedValue(strategy=GenerationType.AUTO) This gives hybernate(JPA) to controll for generation. //
+	// This(GenerationType.IDENTITY) makes database responsible for generation. If you want to seed application with a sql
+	// you have to give controll to database over id generation to prevent occupying the same id for newly
+	// created records
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	private long projectId;
 	
 	private String name;
