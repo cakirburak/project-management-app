@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th:"http://www.thymeleaf.org">
+	<head th:replace="layouts :: header(title='PMA: Projects')"></head>
+	<body>
+		<nav th:replace="layouts :: navbar"></nav>
+		<h1 class="text-center my-5">Project Directory</h1>
+		<div class="w-50 d-flex flex-column mx-auto">
+			<a th:href="@{/projects/new}" class="btn btn-primary btn-sm mb-3 w-25">New Project</a>
+			<table class="table table-sm table-striped table-hover my-3">
+			  <thead>
+			    <tr>
+			      <th scope="col">Project Name</th>
+			      <th scope="col">Project Stage</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+				<tr th:each="project: ${projects}">
+			      <td th:text="${project.name}">
+				  <td th:text="${project.stage}">
+				</tr>
+			  </tbody>
+			</table>	
+		</div>
+	</body>
+</html>

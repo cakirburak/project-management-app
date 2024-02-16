@@ -22,13 +22,13 @@ public class HomeController {
 	@Autowired
 	EmployeeRepository employeeRepo;
 	
-	@GetMapping("")
+	@GetMapping
 	public String displayHome(Model model) {
 		List<Project> projects =  (List<Project>) projectRepo.findAll();
 		List<Employee> employees =  (List<Employee>) employeeRepo.findAll();
 		
 		model.addAttribute("projects",projects);
 		model.addAttribute("employees",employees);
-		return "home";
+		return "main/home";
 	}
 }

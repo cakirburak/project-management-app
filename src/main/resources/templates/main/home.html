@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th:"http://www.thymeleaf.org">
-		<head>
-			  <meta charset="utf-8">
-			  <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit=no">
-			  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-			  <title>PMA: Employees</title>
-		</head>
+	<head th:replace="layouts :: header(title='PMA')"></head>
 	<body>
+		<nav th:replace="layouts :: navbar"></nav>
 		<div class="container-sm mt-5">
 			<h1 class="text-center">Current Projects</h1>
 			<div class="w-50 d-flex flex-column mx-auto">
@@ -37,12 +33,12 @@
 				  </thead>
 				  <tbody>
 					<tr th:each="employee: ${employees}">
-				      <td th:text="${employee.fistName}">
+				      <td th:text="${employee.firstName}">
 					  <td th:text="${employee.lastName}">
 					  <td th:text="${employee.email}">
 					</tr>
 				  </tbody>
-			</table>
+				</table>
 			</div>
 		</div>
 	</body>
