@@ -5,10 +5,10 @@
 		<nav th:replace="layouts :: navbar"></nav>
 		<div class="container-sm mt-5">
 			<h1 class="text-center">Current Projects</h1>
-			<div class="w-50 d-flex flex-column mx-auto">
-				<table class="table table-sm table-striped table-hover my-3">
+			<div class="w-75 d-flex flex-row mx-auto">
+				<table class="table table table-striped table-hover my-3 align-self-start">
 					  <thead>
-					    <tr>
+					    <tr class="table-dark">
 					      <th scope="col">Project Name</th>
 					      <th scope="col">Project Stage</th>
 					    </tr>
@@ -20,12 +20,15 @@
 						</tr>
 					  </tbody>
 				</table>
+				<div class="col-md-4 mx-auto">
+					<canvas id="myPieChart" width="40" height="40"></canvas>
+				</div>
 			</div>
 			<h1 class="text-center mt-5">Current Employees</h1>
 			<div class="w-50 d-flex flex-column mx-auto">
 				<table class="table table-sm table-striped table-hover my-3">
 				  <thead>
-				    <tr>
+				    <tr class="table-dark">
 				      <th scope="col">Employee Name</th>
 				      <th scope="col">Employee Lastname</th>
 				      <th scope="col">Employee Email</th>
@@ -41,9 +44,6 @@
 				</table>
 			</div>
 		</div>
-		<div class="col-md-4">
-			<canvas id="myPieChart" height="50" width="50"></canvas>
-		</div>
-		<script type="text/javascript" th:href="@{js/myChart.js}"></script>
+		<script type="text/javascript" th:src="@{/js/myChart.js}"></script>
 	</body>
 </html>
