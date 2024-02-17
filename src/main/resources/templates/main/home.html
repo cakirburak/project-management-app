@@ -3,10 +3,10 @@
 	<head th:replace="layouts :: header(title='PMA')"></head>
 	<body>
 		<nav th:replace="layouts :: navbar"></nav>
-		<div class="container-sm mt-5">
+		<div class="container-sm my-5">
 			<h1 class="text-center">Current Projects</h1>
-			<div class="w-75 d-flex flex-row mx-auto">
-				<table class="table table table-striped table-hover my-3 align-self-start">
+			<div class="w-75 d-flex flex-row mx-auto my-3 ">
+				<table class="table table table-striped table-hover align-self-start w-50 ms-auto">
 					  <thead>
 					    <tr class="table-dark">
 					      <th scope="col">Name</th>
@@ -20,13 +20,13 @@
 						</tr>
 					  </tbody>
 				</table>
-				<div class="col-md-4 mx-auto">
-					<canvas id="myPieChart" width="40" height="40"></canvas>
+				<div class="col-md-4 w-25">
+					<canvas id="myPieChart" class="w-100"></canvas>
 				</div>
 			</div>
 			<h1 class="text-center mt-5">Current Employees</h1>
-			<div class="w-50 d-flex flex-column mx-auto">
-				<table class="table table-sm table-striped table-hover my-3">
+			<div class="w-75 d-flex flex-column mx-auto">
+				<table class="table table-sm table-striped table-hover my-3 w-50 mx-auto">
 				  <thead>
 				    <tr class="table-dark">
 				      <th scope="col">Name</th>
