@@ -9,8 +9,8 @@
 				<table class="table table table-striped table-hover my-3 align-self-start">
 					  <thead>
 					    <tr class="table-dark">
-					      <th scope="col">Project Name</th>
-					      <th scope="col">Project Stage</th>
+					      <th scope="col">Name</th>
+					      <th scope="col">State</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -29,16 +29,16 @@
 				<table class="table table-sm table-striped table-hover my-3">
 				  <thead>
 				    <tr class="table-dark">
-				      <th scope="col">Employee Name</th>
-				      <th scope="col">Employee Lastname</th>
-				      <th scope="col">Employee Email</th>
+				      <th scope="col">Name</th>
+				      <th scope="col">Lastname</th>
+				      <th scope="col"># Projects</th>
 				    </tr>
 				  </thead>
 				  <tbody>
-					<tr th:each="employee: ${employees}">
+					<tr th:each="employee: ${employeesWithCnt}">
 				      <td th:text="${employee.firstName}">
 					  <td th:text="${employee.lastName}">
-					  <td th:text="${employee.email}">
+					  <td th:text="${employee.projectCount}">
 					</tr>
 				  </tbody>
 				</table>

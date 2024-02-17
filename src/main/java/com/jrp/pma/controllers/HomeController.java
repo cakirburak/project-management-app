@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jrp.pma.dao.EmployeeRepository;
 import com.jrp.pma.dao.ProjectRepository;
-import com.jrp.pma.entities.Employee;
+import com.jrp.pma.dto.EmployeeProject;
 import com.jrp.pma.entities.Project;
 
 @Controller
@@ -25,10 +25,10 @@ public class HomeController {
 	@GetMapping
 	public String displayHome(Model model) {
 		List<Project> projects = (List<Project>) projectRepo.findAll();
-		List<Employee> employees = (List<Employee>) employeeRepo.findAll();
+		List<EmployeeProject> employeesWithCnt = (List<EmployeeProject>) employeeRepo.employeeProjectsWithCount();
 
 		model.addAttribute("projects", projects);
-		model.addAttribute("employees", employees);
+		model.addAttribute("employeesWithCnt", employeesWithCnt);
 		return "main/home";
 	}
 }
