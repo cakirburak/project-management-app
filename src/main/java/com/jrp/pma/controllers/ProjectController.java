@@ -18,10 +18,10 @@ import com.jrp.pma.entities.Project;
 @Controller
 @RequestMapping("/projects")
 public class ProjectController {
-	
+
 	@Autowired
 	ProjectRepository projectRepo;
-	
+
 	@Autowired
 	EmployeeRepository employeeRepo;
 
@@ -31,7 +31,7 @@ public class ProjectController {
 		model.addAttribute("projects", projects);
 		return "projects/list-projects";
 	}
-	
+
 	@GetMapping("/new")
 	public String displayProjectForm(Model model) {
 		List<Employee> employees = employeeRepo.findAll();
@@ -39,10 +39,10 @@ public class ProjectController {
 		model.addAttribute("employees", employees);
 		return "projects/new-project";
 	}
-	
+
 	@PostMapping("/save")
 	public String saveProject(@RequestParam List<Long> employees, Model model, Project project) {
-		
+
 		projectRepo.save(project);
 		// use redirect to prevent multiple submits
 		return "redirect:/projects";

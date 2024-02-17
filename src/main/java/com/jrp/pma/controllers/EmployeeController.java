@@ -16,27 +16,27 @@ import com.jrp.pma.entities.Employee;
 @Controller
 @RequestMapping("/employees")
 public class EmployeeController {
-	
+
 	@Autowired
 	EmployeeRepository employeeRepo;
 
 	@Autowired
 	ProjectRepository projectRepo;
-	
+
 	@GetMapping
 	public String showEmployees(Model model) {
-		
-		List<Employee> employees =  (List<Employee>) employeeRepo.findAll();
+
+		List<Employee> employees = (List<Employee>) employeeRepo.findAll();
 		model.addAttribute("employees", employees);
 		return "employees/list-employees";
 	}
-	
+
 	@GetMapping("/new")
 	public String showEmployeeForm(Model model) {
 		model.addAttribute("employee", new Employee());
 		return "employees/new-employee";
 	}
-	
+
 	@PostMapping("/save")
 	public String showEmployeeForm(Model model, Employee employee) {
 
