@@ -1,8 +1,6 @@
 package com.jrp.pma.controllers;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,12 +25,15 @@ public class HomeController {
 	@Autowired
 	EmployeeRepository employeeRepo;
 
+//	@Autowired
+//	Car car;
+
 	@GetMapping
 	public String displayHome(Model model) throws JsonProcessingException {
 		List<Project> projects = (List<Project>) projectRepo.findAll();
 		List<EmployeeProject> employeesWithCnt = (List<EmployeeProject>) employeeRepo.employeeProjectsWithCount();
 
-		Map<String, Object> map = new HashMap<>();
+//		Map<String, Object> map = new HashMap<>();
 		List<ChartData> projectData = projectRepo.chartData();
 		ObjectMapper objectMapper = new ObjectMapper();
 		String jsonString = objectMapper.writeValueAsString(projectData);
