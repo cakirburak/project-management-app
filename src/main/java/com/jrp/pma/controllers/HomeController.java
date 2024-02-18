@@ -30,6 +30,7 @@ public class HomeController {
 
 	@GetMapping
 	public String displayHome(Model model) throws JsonProcessingException {
+
 		List<Project> projects = (List<Project>) projectRepo.findAll();
 		List<EmployeeProject> employeesWithCnt = (List<EmployeeProject>) employeeRepo.employeeProjectsWithCount();
 

@@ -11,10 +11,6 @@ for(let i = 0; i < chartDataJson.length ; i++){
 	labelData[i] = chartDataJson[i].projectStage
 }
 
-console.log(numericData)
-console.log(labelData)
-
-
 new Chart(ctx, {
 	type: 'pie',
 	data: {
