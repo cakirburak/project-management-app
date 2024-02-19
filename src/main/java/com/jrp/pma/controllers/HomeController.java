@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jrp.pma.dao.EmployeeRepository;
-import com.jrp.pma.dao.ProjectRepository;
 import com.jrp.pma.dto.ChartData;
 import com.jrp.pma.dto.EmployeeProject;
 import com.jrp.pma.entities.Project;
+import com.jrp.pma.services.EmployeeService;
+import com.jrp.pma.services.ProjectService;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
 
 	@Autowired
-	ProjectRepository projectRepo;
+	ProjectService projectService;
 	@Autowired
-	EmployeeRepository employeeRepo;
+	EmployeeService employeeService;
 
 //	@Autowired
 //	Car car;
@@ -31,11 +31,11 @@ public class HomeController {
 	@GetMapping
 	public String displayHome(Model model) throws JsonProcessingException {
 
-		List<Project> projects = (List<Project>) projectRepo.findAll();
-		List<EmployeeProject> employeesWithCnt = (List<EmployeeProject>) employeeRepo.employeeProjectsWithCount();
+		List<Project> projects = (List<Project>) projectService.getAll();
+		List<EmployeeProject> employeesWithCnt = (List<EmployeeProject>) employeeService.employeeProjects();
 
 //		Map<String, Object> map = new HashMap<>();
-		List<ChartData> projectData = projectRepo.chartData();
+		List<ChartData> projectData = projectService.getChartData();
 		ObjectMapper objectMapper = new ObjectMapper();
 		String jsonString = objectMapper.writeValueAsString(projectData);
 
