@@ -2,6 +2,8 @@
 
 The Project Management App is a comprehensive web-based solution designed to help companies efficiently manage their projects and employees. This application provides a user-friendly interface for creating, organizing, and tracking projects, assigning tasks to team members, monitoring progress, and facilitating collaboration within the organization.
 
+![PMA Preview](screenshots/home-page.png)
+
 ## Features
 
 - **Project Management**: Create, edit, and delete projects with detailed descriptions, deadlines, and associated tasks.
