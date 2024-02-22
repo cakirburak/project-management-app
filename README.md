@@ -21,10 +21,8 @@ The Project Management App is a comprehensive web-based solution designed to hel
 - **Testing**: JUnit
 - **Build Tool**: Maven
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
-
-- Java Development Kit (JDK) 8 or higher
+- Java Development Kit (JDK) 17 or higher
 - Apache Maven
 - PostgreSQL database server
